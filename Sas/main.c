@@ -52,7 +52,7 @@ int main()
     int ntaches;
     int choix;
     Tache T[200];
-
+while(1){
     printf("**********MENU**********\n");
     printf("1- Ajouter une nouvelle tache\n");
     printf("2- Ajouter plusieurs nouvelles taches\n");
@@ -123,9 +123,34 @@ int main()
                 }
             }
             break;
-            case 2:
-                //affiche
+            case 2:{
+                int idf;
+                printf("Entrez l'identifiant de la tache que vous voulez modifier:");
+                scanf("%d",&idf);
+                int loc_idf = trouver idf(Tache,nombredetache,idf);
+                if(loc_idf != -1)
+                {
+                    switch (choix)
+                {
+                case 1:
+                    getchar();//lire retour en ligne
+                    printf("Description:");
+                    fgets(tache[loc_idf].description,sizeof(tache[loc_idf].description),stdin);
+                    break;
+                case 2:
+                    changer_statut(tache,loc_idf);
+                    break;
+                case 3:
+                    entrer_deadline(tache,loc_idf);
+                    break ;
+                default:
+                    printf("Impossible choix,entrez un choix possible.\n");
+                    break ;
+
+                    }
+                }
                 break;
+            }
             case 3:
                 //affiche
                 break;
@@ -148,13 +173,49 @@ int main()
         switch (choix)
         {
         case 1:
-            //affiche
+                int idf;
+                printf("Entrez l'identifiant de la tache que vous voulez modifier:");
+                scanf("%d",&idf);
+                int loc_idf = trouver idf(Tache,nombredetache,idf);
+                if(loc_idf != -1)
+                {
+                    switch (choix)
+                {
+                case 1:
+                    getchar();//lire retour en ligne
+                    printf("Description:");
+                    fgets(tache[loc_idf].description,sizeof(tache[loc_idf].description),stdin);
+                    break;
+                case 2:
+                    changer_statut(tache,loc_idf);
+                    break;
+                case 3:
+                    entrer_deadline(tache,loc_idf);
+                    break ;
+                default:
+                    printf("Impossible choix,entrez un choix possible.\n");
+                    break ;
+
+                    }
+                }
+               else
+               {
+                   printf("l'identifiant est introuvable.\n");
+               }
+        }
+        while(!retour_menu_principal);
+    }
+    else{
+
+        printf("la liste des taches est vide.\n");
+    }
+
             break;
         case 2:
             break;
         }
-
+case 8:exit(1);break;
     }
-
+}
     return 0;
 }
