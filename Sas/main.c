@@ -127,7 +127,7 @@ while(1){
                 int idf;
                 printf("Entrez l'identifiant de la tache que vous voulez modifier:");
                 scanf("%d",&idf);
-                int loc_idf = trouver idf(Tache,nombredetache,idf);
+                int loc_idf = trouver_idf(Tache,nombredetache,idf);
                 if(loc_idf != -1)
                 {
                     switch (choix)
@@ -211,9 +211,17 @@ while(1){
     }
 
             break;
-        case 2:
-            break;
+
         }
+                case 6:
+                    printf("Rechercher une tache par son identifiant\n");
+                    printf("Rechercher une tache par son identifiant\n");
+                    scanf(%d,&choix);
+                    switch (choix)
+
+
+
+                    break
 case 8:exit(1);break;
     }
 }
